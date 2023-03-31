@@ -20,7 +20,7 @@ for case in range(10):
 
 ### 설명
 
-<p align="center"><img width="100%" height="100%" src="./img.png"></p>
+<p align="center"><img width="50%" height="50%" src="./img.png"></p>
 
 - 빌딩의 높이가 list로 주어지고
 - i번째 빌딩에서 오른쪽과 왼쪽 2개 범위의 빌딩 높이를 비교
