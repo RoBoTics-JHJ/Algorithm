@@ -4,7 +4,7 @@
 메모리 제한: 512MB <br/>
 (1 ≤ M ≤ N ≤ 7)
 ## 백트레킹 (중복 순열)
-### 1번 풀이 (680ms, 124MB)
+### 1번 풀이 (152ms, 115MB)
 ```python
 N, M = map(int, input().split())
 
@@ -18,29 +18,29 @@ def func():
         return
 
     for i in range(0, N):
-        tmp_stack.append(i+1)
+        if len(tmp_stack) == 0 or tmp_stack[-1] <= (i + 1):
+            tmp_stack.append(i + 1)
 
-        func()
+            func()
 
-        tmp_stack.pop()
+            tmp_stack.pop()
 
 
 func()
 ```
-- 중복을 허용하기 때문에 check_list를 if문과 함께 확인할 필요가 없음
-- tmp_stack 길이가 M 인 모든 경우를 출력하게 됨
+- 핵심코드: **"if len(tmp_stack) == 0 or tmp_stack[-1] <= (i + 1):"**
 <br/><br/><br/>
-### 2번 풀이 (596ms, 120MB)
+### 2번 풀이 (180ms, 115MB)
 ```python
-from itertools import product
+from itertools import combinations_with_replacement
 
 N, M = map(int, input().split())
 
 nums = [i for i in range(1, N + 1)]
-product_list = product(nums, repeat=M)
+combinations_with_replacement_list = combinations_with_replacement(nums, M)
 
-for i in product_list:
+for i in combinations_with_replacement_list:
     print(' '.join(map(str, i)))
 ```
-- itertools 모듈로 구현된 중복 순열 함수 ( = product) 사용
+- itertools 모듈로 구현된 중복 조합 함수 ( = combinations_with_replacement) 사용
 
