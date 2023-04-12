@@ -12,7 +12,7 @@ check_list = [0] * N
 tmp_stack = []
 
 
-def dfs():
+def func():
     if len(tmp_stack) == M:
         print(' '.join(map(str, tmp_stack)))
 
@@ -23,10 +23,10 @@ def dfs():
         check_list[i] = True
         tmp_stack.append(i + 1)
 
-        dfs()
+        func()
 
         check_list[i] = False
         tmp_stack.pop()
 
 
-dfs()
+func()

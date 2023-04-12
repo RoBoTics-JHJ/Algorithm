@@ -11,7 +11,7 @@ check_list = [0] * N
 tmp_stack = []
 
 
-def dfs():
+def func():
     # 백트래킹 가지치기(pruning)
     if len(tmp_stack) == M:
         print(' '.join(map(str, tmp_stack)))
@@ -24,13 +24,13 @@ def dfs():
         check_list[i] = True
         tmp_stack.append(i + 1)
 
-        dfs()
+        func()
 
         check_list[i] = False
         tmp_stack.pop()
 
 
-dfs()
+func()
 ```
 - DFS 탐색 중, **" len(tmp_stack) == M "** 일 때 출력함 (= 백트래킹 기법)
 - 정석대로 푼 케이스. "2번 풀이"처럼 풀면 check_list가 필요 없음
@@ -41,7 +41,7 @@ N, M = map(int, input().split())
 
 tmp_stack = []
 
-def dfs():
+def func():
     # 백트래킹 가지치기(pruning)
     if len(tmp_stack) == M:
         print(' '.join(map(str, tmp_stack)))
@@ -50,11 +50,13 @@ def dfs():
     for i in range(1, N+1):
         if i not in tmp_stack:  # Containment(포함 여부 확인) => O(n)
             tmp_stack.append(i)
-            dfs()
+            
+            func()
+            
             tmp_stack.pop()
 
 
-dfs()
+func()
 ```
 <br/><br/><br/>
 ### 3번 풀이 (160ms, 115MB)
