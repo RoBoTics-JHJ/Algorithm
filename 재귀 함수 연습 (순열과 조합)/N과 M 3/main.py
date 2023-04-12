@@ -7,7 +7,6 @@ sys.stdout = open('output.txt', 'w')
 ###########################################################################
 N, M = map(int, input().split())
 
-check_list = [False] * N
 tmp_stack = []
 
 
@@ -17,16 +16,12 @@ def func():
         return
 
     for i in range(0, N):
-        if check_list[i]:
-            continue
-
-        check_list[i] = True
-        tmp_stack.append(i + 1)
+        tmp_stack.append(i+1)
 
         func()
 
-        check_list[i] = False
         tmp_stack.pop()
 
 
 func()
+
