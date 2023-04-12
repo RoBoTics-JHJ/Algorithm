@@ -1,10 +1,8 @@
-[문제보기](https://www.acmicpc.net/problem/15649)
-
+[문제보기](https://www.acmicpc.net/problem/15649) <br/>
 시간 제한: 1초 (20,000,000 연산) <br/>
 메모리 제한: 512MB <br/>
 (1 ≤ M ≤ N ≤ 8)
 ## 백트레킹 (순열 구현)
-
 ### 1번 풀이 (204ms, 117MB)
 ```python
 N, M = map(int, input().split())
@@ -28,8 +26,8 @@ def dfs():
 
         dfs()
 
-        tmp_stack.pop()
         check_list[i] = False
+        tmp_stack.pop()
 
 
 dfs()
@@ -37,7 +35,6 @@ dfs()
 - DFS 탐색 중, **" len(tmp_stack) == M "** 일 때 출력함 (= 백트래킹 기법)
 - 정석대로 푼 케이스. "2번 풀이"처럼 풀면 check_list가 필요 없음
 <br/><br/><br/>
-
 ### 2번 풀이 (204ms, 117MB)
 ```python
 N, M = map(int, input().split())
@@ -60,7 +57,6 @@ def dfs():
 dfs()
 ```
 <br/><br/><br/>
-
 ### 3번 풀이 (160ms, 115MB)
 ```python
 from itertools import permutations
@@ -73,5 +69,5 @@ permutated_list = permutations(nums, M)  # tuple(int) 반환
 for i in permutated_list:
     print(' '.join(map(str, i)))
 ```
-- itertools 모듈로 구현된 순열 함수 (=permutations) 사용
+- itertools 모듈로 구현된 순열 함수 ( = permutations) 사용
 
