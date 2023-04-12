@@ -66,9 +66,9 @@ from itertools import permutations
 N, M = map(int, input().split())
 
 nums = [i for i in range(1, N + 1)]
-permutated_list = permutations(nums, M)  # tuple(int) 반환
+permutation_list = permutations(nums, M)  # tuple(int) 반환
 
-for i in permutated_list:
+for i in permutation_list:
     print(' '.join(map(str, i)))
 ```
 - itertools 모듈로 구현된 순열 함수 ( = permutations) 사용
