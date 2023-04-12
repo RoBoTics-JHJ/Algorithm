@@ -1,4 +1,4 @@
-# 표준 입출력 파일 설정 ####################################################
+# 표준 입출력 파일 설정 #######################################################
 import os
 import sys
 os.chdir(os.path.dirname(__file__))
@@ -12,8 +12,10 @@ tmp_stack = []
 
 
 def dfs():
+    # 백트래킹 가지치기(pruning)
     if len(tmp_stack) == M:
         print(' '.join(map(str, tmp_stack)))
+        return
 
     for i in range(0, N):
         if check_list[i]:
@@ -29,4 +31,3 @@ def dfs():
 
 
 dfs()
-
