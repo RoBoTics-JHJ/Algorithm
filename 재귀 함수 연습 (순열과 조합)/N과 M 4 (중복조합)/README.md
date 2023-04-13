@@ -1,9 +1,9 @@
-[문제보기](https://www.acmicpc.net/problem/15651)
+[문제보기](https://www.acmicpc.net/problem/15652)
 
 시간 제한: 1초 (20,000,000 연산) <br/>
 메모리 제한: 512MB <br/>
 (1 ≤ M ≤ N ≤ 7)
-## 백트레킹 (중복 순열)
+## 백트레킹 (중복 조합)
 ### 1번 풀이 (152ms, 115MB)
 ```python
 N, M = map(int, input().split())
