@@ -30,16 +30,16 @@ def func(start):
 func(0)
 ```
 <br/><br/><br/>
-### 2번 풀이 (188ms, 115MB)
+### 2번 풀이 (128ms, 113MB)
 ```python
-from itertools import permutations
+from itertools import combinations
 
 N, M = map(int, input().split())
 
 nums = list(map(int, input().split()))
 nums.sort()
 
-for i in permutations(nums, M):
+for i in combinations(nums, M):
     print(' '.join(map(str, i)))
 ```
 
